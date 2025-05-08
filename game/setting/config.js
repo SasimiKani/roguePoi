@@ -4,7 +4,7 @@ const difficultySettings = {
 	normal: { name: "山レベル", wallEmoji: "⛰️", wallSubEmoji: "🌳", maxFloor: 20, revealLv: 3 },
 	normalPlus:	 { name: "雪原レベル", wallEmoji: "⬜️", wallSubEmoji: "❄️", maxFloor: 40, revealLv: 7 },
 	hard:	 { name: "火山レベル", wallEmoji: "🌋", wallSubEmoji: "🪨", maxFloor: 99, revealLv: 2 },
-	hardPlus:	 { name: "海底レベル", wallEmoji: "🪸", wallSubEmoji: "🐚", maxFloor: 500, revealLv: 4 }
+	hardPlus:	 { name: "海底レベル", wallEmoji: "🪸", wallSubEmoji: "🐚", maxFloor: 255, revealLv: 4 }
 }
 
 /** 共通値設定 */
@@ -160,6 +160,7 @@ const normalPlusEnemyDefinitions = [
     new EnemyDefinition(EnemyCrayfish, [10, 25], 10),
     new EnemyDefinition(EnemySlime,    [15, 30],  8),
     new EnemyDefinition(EnemyBat,      [20, 40],  6),
+//    new EnemyDefinition(EnemySnowman,  [1, 40],  10),
     new EnemyDefinition(EnemyGoblin,   [25, 40],  4),
     new EnemyDefinition(EnemySkeleton, [28, 40],  3),
     new EnemyDefinition(EnemySpider,   [30, 40],  2),

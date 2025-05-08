@@ -184,6 +184,16 @@ class EnemyBat extends Enemy {
 	}
 }
 
+class EnemySnowman extends Enemy {
+	constructor(x, y, hp) {
+		super("雪だるさん", x, y, hp + 8, 16, 4, '⛄️')
+		this.searchAlgo = (game, startX, startY, targetX, targetY) => SearchAlgorithm.noMove(game, startX, startY, targetX, targetY)
+		this.skills = [
+			Skill.offensiveSnowBall(this)
+		]
+	}
+}
+
 class EnemyGoblin extends Enemy {
 	constructor(x, y, hp) {
 		super("ゴブリン", x, y, hp + 8, 16, 4, '👹')

@@ -1,6 +1,6 @@
 // EffectsManager クラス
 class EffectsManager {
-	static async showFieldEffect(container, emoji, many) {
+	static async showFieldEffect(container, emoji, many, type=0) {
 		const rect = container.getBoundingClientRect()
 		const containerSize = CONFIG.FONT_SIZE * (CONFIG.VIEW_RADIUS * 2 + 1)
 		
@@ -13,7 +13,7 @@ class EffectsManager {
 				span.textContent = emoji
 				span.style.left = `${x}px`
 				span.style.top = `${y}px`
-				span.classList.add("field-effects")
+				span.classList.add(`field-effects-${type}`)
 				
 				document.body.appendChild(span);
 				setTimeout(() => {r()}, 3000 / many)

@@ -131,15 +131,12 @@ class Game {
 			break
 		case "normalPlus":
 			EffectsManager.showFieldEffect(this.gameContainer, "❄", 50)
-			//this.bgmBox.playNormal()
 			break
 		case "hard":
 			EffectsManager.showFieldEffect(this.gameContainer, "🔥", 10)
-			//this.bgmBox.playNormal()
 			break
 		case "hardPlus":
-			//EffectsManager.showFieldEffect(this.gameContainer, "🔥", 10)
-			//this.bgmBox.playNormal()
+			EffectsManager.showFieldEffect(this.gameContainer, "🫧", 10, 1)
 			break
 		}
 

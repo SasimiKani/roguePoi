@@ -1017,6 +1017,9 @@ class Game {
 
 	/* 9. 中断セーブ */
 	save() {
+		this.weaponIndex = this.player.inventory.indexOf(this.player.weapon)
+		this.shieldIndex = this.player.inventory.indexOf(this.player.shield)
+
 		const difficulty = CONFIG.DIFFICULTY
 		const data = Serializer.serialize(this)
 		const comp = LZString.compressToEncodedURIComponent(data)
@@ -1131,6 +1134,16 @@ class Game {
 				})
 			}
 		})
+
+		// 装備を復元
+		if (this.weaponIndex > -1) {
+			this.player.weapon = this.player.inventory.at(this.weaponIndex)
+			delete(this.weaponIndex)
+		}
+		if (this.shieldIndex > -1) {
+			this.player.shield = this.player.inventory.at(this.shieldIndex)
+			delete(this.shieldIndex)
+		}
 
 		////console.log(this.enemies)
 		////console.log(this.items)

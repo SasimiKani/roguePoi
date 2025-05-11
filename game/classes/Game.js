@@ -1145,6 +1145,16 @@ class Game {
 			delete(this.shieldIndex)
 		}
 
+		// 睡眠中の敵を復元
+		this.enemies.forEach(enemy => {
+			if (!!enemy.sleepEffect) {
+				enemy.isSleep = true
+				delete(enemy.sleepEffect)
+			} else {
+				enemy.isSleep = false
+			}
+		})
+
 		////console.log(this.enemies)
 		////console.log(this.items)
 

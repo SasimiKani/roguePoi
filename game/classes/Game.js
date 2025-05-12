@@ -1094,7 +1094,7 @@ class Game {
 		this.enemies = this.enemies.map(entity => {
 			const e = new (eval(entity.constructor.name))()
 			Object.entries(entity).forEach(([k, v]) => {
-				if (typeof v === "function") return
+				if (["function", "object"].includes(typeof v)) return
 				e[k] = v
 			})
 			return e
